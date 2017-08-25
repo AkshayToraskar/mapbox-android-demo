@@ -41,7 +41,7 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineJoin;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineOpacity;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineWidth;
 
-public class MapillaryActvitiy extends AppCompatActivity {
+public class MapillaryActivity extends AppCompatActivity {
 
   private MapView mapView;
   private MapboxMap map;
@@ -80,7 +80,7 @@ public class MapillaryActvitiy extends AppCompatActivity {
               Feature feature = featureList.get(0);
               Log.e(Mapillary.ID_SOURCE, feature.toJson());
 //              String key = feature.getStringProperty("key");
-//              Picasso.with(MapillaryActvitiy.this)
+//              Picasso.with(MapillaryActivity.this)
 //                .load(String.format(Mapillary.URL_IMAGE_PLACEHOLDER, key))
 //                .into(imageView);
             } else {
