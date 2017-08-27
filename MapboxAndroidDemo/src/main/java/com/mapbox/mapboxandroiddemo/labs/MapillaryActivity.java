@@ -1,18 +1,15 @@
 package com.mapbox.mapboxandroiddemo.labs;
 
 import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.mapbox.mapboxandroiddemo.R;
 import com.mapbox.mapboxsdk.Mapbox;
-import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
@@ -26,11 +23,8 @@ import com.mapbox.mapboxsdk.style.sources.Source;
 import com.mapbox.mapboxsdk.style.sources.TileSet;
 import com.mapbox.mapboxsdk.style.sources.VectorSource;
 import com.mapbox.services.commons.geojson.Feature;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import timber.log.Timber;
 
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.circleColor;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.circleOpacity;
@@ -58,7 +52,7 @@ public class MapillaryActivity extends AppCompatActivity {
     // This contains the MapView in XML and needs to be called after the access token is configured.
     setContentView(R.layout.activity_lab_mapillary);
 
-//    final ImageView imageView = (ImageView) findViewById(R.id.imageView);
+    //    final ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
     mapView = (MapView) findViewById(R.id.mapView);
     mapView.onCreate(savedInstanceState);
@@ -79,10 +73,10 @@ public class MapillaryActivity extends AppCompatActivity {
             if (!featureList.isEmpty()) {
               Feature feature = featureList.get(0);
               Log.e(Mapillary.ID_SOURCE, feature.toJson());
-//              String key = feature.getStringProperty("key");
-//              Picasso.with(MapillaryActivity.this)
-//                .load(String.format(Mapillary.URL_IMAGE_PLACEHOLDER, key))
-//                .into(imageView);
+              //              String key = feature.getStringProperty("key");
+              //              Picasso.with(MapillaryActivity.this)
+              //                .load(String.format(Mapillary.URL_IMAGE_PLACEHOLDER, key))
+              //                .into(imageView);
             } else {
               Log.e(Mapillary.ID_SOURCE, "NO FEATURES");
             }
@@ -141,7 +135,7 @@ public class MapillaryActivity extends AppCompatActivity {
     static final String ID_CIRCLE_LAYER = ID_SOURCE + ".circle";
     static final String ID_ABOVE_LAYER = "aerialway";
     static final String URL_TILESET = "https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt";
-//    static final String URL_IMAGE_PLACEHOLDER = "https://d1cuyjsrcm0gby.cloudfront.net/%s/thumb-320.jpg";
+    //    static final String URL_IMAGE_PLACEHOLDER = "https://d1cuyjsrcm0gby.cloudfront.net/%s/thumb-320.jpg";
 
     static Source createSource() {
       TileSet mapillaryTileset = new TileSet("2.1.0", Mapillary.URL_TILESET);
